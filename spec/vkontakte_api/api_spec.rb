@@ -35,7 +35,7 @@ describe VkontakteApi::API do
         end
       end
       
-      Yajl::Parser.stub(:parse).and_return(@result)
+      MultiJson.stub(:parse).and_return(@result)
     end
     
     it "calls the url from .url_for" do

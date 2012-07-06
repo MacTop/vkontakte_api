@@ -19,7 +19,7 @@ module VkontakteApi
         
         url = url_for(method_name, args)
         body = connection.get(url).body
-        response = Yajl::Parser.parse(body, :symbolize_keys => true)
+        response = MultiJson.load(body, :symbolize_keys => true)
         
         if response.has_key?(:error)
           raise VkontakteApi::Error.new(response[:error])

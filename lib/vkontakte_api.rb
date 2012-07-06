@@ -1,5 +1,5 @@
 require 'faraday'
-require 'yajl'
+require 'multi_json'
 require 'yaml'
 require 'active_support/core_ext/string/inflections'
 require 'active_support/core_ext/object/to_query'
