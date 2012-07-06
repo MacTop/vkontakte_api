@@ -13,7 +13,7 @@ module VkontakteApi
       # @return [Hash] The result of the method call.
       # @raise [VkontakteApi::Error] raised when VKontakte returns an error.
       def call(method_name, args = {}, &block)
-        connection = Faraday.new(:url => BASE_HOST) do |builder|
+        connection = Faraday.new(BASE_HOST, VkontakteApi.client_options)  do |builder|
           builder.adapter(VkontakteApi.adapter)
         end
         

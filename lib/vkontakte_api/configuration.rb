@@ -4,7 +4,7 @@ module VkontakteApi
   # It extends `VkontakteApi` so it's methods should be called from there.
   module Configuration
     # Available options.
-    OPTION_NAMES = [:app_id, :app_secret, :adapter]
+    OPTION_NAMES = [:app_id, :app_secret, :adapter, :client_options]
     
     attr_accessor *OPTION_NAMES
     
@@ -23,7 +23,8 @@ module VkontakteApi
     
     # Reset all configuration options to defaults.
     def reset
-      @adapter = DEFAULT_ADAPTER
+      @adapter         = DEFAULT_ADAPTER
+      @client_options  = {}
     end
     
     # When this module is extended, set all configuration options to their default values.
